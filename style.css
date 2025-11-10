@@ -22,9 +22,13 @@
     border: 1px dotted blue;
 }
 
-.item:nth-child(2n) {
+.mouseover {
     background-color: grey;
 }
+
+/* .item:nth-child(2n) {
+    background-color: grey;
+} */
 
 /* div {
     width: auto;

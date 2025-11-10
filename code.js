@@ -14,3 +14,9 @@ for (let itemNum = 0; itemNum <= 255; itemNum++) {
     itemArray[itemNum].setAttribute("class", `item item-${itemNum + 1}`);
     rowArray[rowNum].appendChild(itemArray[itemNum]);
 }
+
+for (let item in itemArray) {
+    itemArray[item].addEventListener("mouseover", () => {
+        itemArray[item].classList.add("mouseover");
+    });
+}
