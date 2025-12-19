@@ -19,8 +19,11 @@ for (let itemNum = 0; itemNum < 256; itemNum++) {
 }
 
 for (let item in itemArray) {
+    itemArray[item].style.opacity = .1;
     itemArray[item].addEventListener("mouseover", () => {
-        itemArray[item].classList.add("mouseover");
+        // itemArray[item].classList.add("mouseover");
+        itemArray[item].style.backgroundColor = getRandomColor();
+        itemArray[item].style.opacity = Number(itemArray[item].style.opacity) + .1;
     });
 }
 
@@ -46,12 +49,24 @@ newGridButton.addEventListener('click', () => {
         itemArray[itemNum] = document.createElement("div");
         itemArray[itemNum].setAttribute("class", `item item-${itemNum + 1}`);
         rowArray[rowNum].appendChild(itemArray[itemNum]);
-        };
     };
+};
 
-    for (let item in itemArray) {
-        itemArray[item].addEventListener("mouseover", () => {
-        itemArray[item].classList.add("mouseover");
+for (let item in itemArray) {
+    itemArray[item].style.opacity = .1;
+    itemArray[item].addEventListener("mouseover", () => {
+        // itemArray[item].classList.add("mouseover");
+        itemArray[item].style.backgroundColor = getRandomColor();
+        itemArray[item].style.opacity = Number(itemArray[item].style.opacity) + .1;
     });
 }
 });
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
